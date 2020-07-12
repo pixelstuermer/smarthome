@@ -10,14 +10,6 @@ Tbd.
 
 Tbd.
 
-## Requirements
-
-Tbd.
-
-## Setup
-
-Tbd.
-
 ## Features
 
 Tbd.
@@ -30,7 +22,23 @@ Tbd.
 
 Tbd.
 
+#### Requirements
+
+Tbd.
+
+#### Setup
+
+Tbd.
+
 ### Docker Components
+
+Tbd.
+
+#### Requirements
+
+Tbd.
+
+#### Setup
 
 Tbd.
 
@@ -38,7 +46,23 @@ Tbd.
 
 Tbd.
 
+#### Requirements
+
+Tbd.
+
+#### Setup
+
+Tbd.
+
 ### Frontend Components
+
+Tbd.
+
+#### Requirements
+
+Tbd.
+
+#### Setup
 
 Tbd.
 
