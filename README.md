@@ -54,6 +54,16 @@ To set up the RabbitMQ Docker container, the following preparations must be made
 The `build.sh` shell script can then simply be executed to build the Docker image from the underlying `Dockerfile`.
 And the `run.sh` script finally starts a Docker container for the RabbitMQ message broker and publishes the required ports `1883` (MQTT) and `15672` (management web UI).
 
+Setting up the PostgreSQL Docker container follows almost the same steps, although the setup of the users is different:
+
+- To define the password of the default `postgres` user, simply set the `POSTGRES_PASSWORD` environment variable with the respective password on your host system
+- To set up other users and passwords, the `V0.0.1__setup.sql` must be adopted
+  - The `CREATE ROLE` SQL command sets up users with defined passwords
+  - For the sake of security, the passwords in this repository are MD5-hashed
+
+The process with the `build.sh` and `run.sh` is the same as already described above.
+When starting the PostgreSQL Docker container, the port `5432` gets published.
+
 ### Backend Components
 
 Tbd.
