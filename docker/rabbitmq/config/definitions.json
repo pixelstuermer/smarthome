@@ -1,0 +1,59 @@
+{
+  "rabbit_version": "3.8.2",
+  "rabbitmq_version": "3.8.2",
+  "users": [
+    {
+      "name": "admin",
+      "password_hash": "ng0ntTX0etjKfSm5NF/fe0M+81mtT0D4J2knnycAksXtOl7E",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "management,administrator"
+    },
+    {
+      "name": "publisher",
+      "password_hash": "0V3EE1qDyYQpnqB8RCGI3Vj/UOVtwkPnkfOt0s4fAI++tYFn",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "subscriber",
+      "password_hash": "1BgELFOsIw6od4KhJ7bSZ16EwSKW58+9SpmL9owHUWDfO6vV",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "publisher",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "subscriber",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [],
+  "policies": [],
+  "queues": [],
+  "exchanges": [],
+  "bindings": []
+}
