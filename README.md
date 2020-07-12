@@ -16,7 +16,13 @@ Tbd.
 
 ## Components
 
-Tbd.
+This monorepo features all the required components of the smarthome side project.
+It furthermore follows the [twelve factors microservice approach](https://12factor.net) and is therefore divided into the following sub projects, each of them being single deployment units:
+
+- The [IoT Components](iot) which provide the sensor data
+- The [Backing Services](services) to route and store the data
+- The [Backend Components](backend) which have the logic to receive and provide the data
+- The [Frontend Components](frontend) to display the data
 
 ### IoT Components
 
