@@ -47,7 +47,7 @@ And a PostgreSQL database is used to store the data.
 The backing services (RabbitMQ and PostgreSQL) in this project are set up using Docker.
 Nevertheless, any other form of provisioning is possible.
 
-#### Setup
+#### Setup RabbitMQ
 
 To set up the RabbitMQ Docker container, the following preparations must be made:
 
@@ -59,6 +59,8 @@ To set up the RabbitMQ Docker container, the following preparations must be made
 
 The `build.sh` shell script can then simply be executed to build the Docker image from the underlying `Dockerfile`.
 And the `run.sh` script finally starts a Docker container for the RabbitMQ message broker and publishes the required ports `1883` (MQTT) and `15672` (management web UI).
+
+#### Setup PostgreSQL
 
 Setting up the PostgreSQL Docker container follows almost the same steps, although the setup of the users and passwords is different:
 
