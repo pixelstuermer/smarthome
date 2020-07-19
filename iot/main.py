@@ -8,11 +8,9 @@ from umqttsimple import MQTTClient
 
 PIN = 4
 SLEEP = 5
+DISCARD_SENSOR_VALUE = 85
 IDENTITY_FILE = "identity.json"
 SETTINGS_FILE = "settings.json"
-
-identity = None
-topic = None
 
 
 def getFileContent(fileName):
@@ -82,8 +80,12 @@ topic = topicFormat.replace("{id}", identity)
 
 while True:
     sensor.convert_temp()
+
     for rom in roms:
         temperature = sensor.read_temp(rom)
-        print("Measured temperature", temperature)
-        client.publish(topic, str(temperature))
+
+        if temperature != DISCARD_SENSOR_VALUE:
+            print("Measured temperature", temperature)
+            client.publish(topic, str(temperature))
+
     time.sleep(SLEEP)
