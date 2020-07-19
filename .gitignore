@@ -1,3 +1,6 @@
 .idea
 *.log
 passwords.*
+identity.*
+settings.*
+umqttsimple.py
