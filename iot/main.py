@@ -8,7 +8,11 @@ from umqttsimple import MQTTClient
 
 PIN = 4
 SLEEP = 5
+
+# Invalid temperature measurement (because of poor cables or whatever)
 DISCARD_SENSOR_VALUE = 85
+
+TOPIC_IDENTITY_PLACEHOLDER = "{id}"
 IDENTITY_FILE = "identity.json"
 SETTINGS_FILE = "settings.json"
 
@@ -18,21 +22,21 @@ def getFileContent(fileName):
     return file.read()
 
 
-def getValue(content, key):
-    if isinstance(content, dict):
+def getValueFromJson(jsonContent, key):
+    if isinstance(jsonContent, dict):
         # Passed argument is already a JSON dictionary
-        return content[key]
+        return jsonContent[key]
     else:
         # Passed argument seems to be a String
-        return json.loads(content)[key]
+        return json.loads(jsonContent)[key]
 
 
 def connect():
     # Load WiFi settings
     settingsFileContent = getFileContent(SETTINGS_FILE)
-    wifiSettings = getValue(settingsFileContent, "wifi")
-    wifiSsid = getValue(wifiSettings, "ssid")
-    wifiPassword = getValue(wifiSettings, "password")
+    wifiSettings = getValueFromJson(settingsFileContent, "wifi")
+    wifiSsid = getValueFromJson(wifiSettings, "ssid")
+    wifiPassword = getValueFromJson(wifiSettings, "password")
 
     # Connect to network
     station = network.WLAN(network.STA_IF)
@@ -48,20 +52,20 @@ def connect():
 def getMqttClient():
     # Load MQTT settings
     settingsFileContent = getFileContent(SETTINGS_FILE)
-    mqttSettings = getValue(settingsFileContent, "mqtt")
-    mqttUsername = getValue(mqttSettings, "username")
-    mqttPassword = getValue(mqttSettings, "password")
-    mqttBrokerAddress = getValue(mqttSettings, "brokerAddress")
+    mqttSettings = getValueFromJson(settingsFileContent, "mqtt")
+    mqttUsername = getValueFromJson(mqttSettings, "username")
+    mqttPassword = getValueFromJson(mqttSettings, "password")
+    mqttBrokerAddress = getValueFromJson(mqttSettings, "brokerAddress")
 
     # Load identity settings
     identityFileContent = getFileContent(IDENTITY_FILE)
-    identity = getValue(identityFileContent, "identity")
+    identity = getValueFromJson(identityFileContent, "identity")
 
     # Connect to broker
     client = MQTTClient(identity, mqttBrokerAddress, user=mqttUsername, password=mqttPassword)
     client.connect()
 
-    print("Set up MQTT client", identity)
+    print("Set up MQTT client for", identity)
     return client
 
 
@@ -74,9 +78,9 @@ sensor = ds18x20.DS18X20(onewire.OneWire(pin))
 roms = sensor.scan()
 
 identityFileContent = getFileContent(IDENTITY_FILE)
-identity = getValue(identityFileContent, "identity")
-topicFormat = getValue(identityFileContent, "topicFormat")
-topic = topicFormat.replace("{id}", identity)
+identity = getValueFromJson(identityFileContent, "identity")
+topicFormat = getValueFromJson(identityFileContent, "topicFormat")
+topic = topicFormat.replace(TOPIC_IDENTITY_PLACEHOLDER, identity)
 
 while True:
     sensor.convert_temp()
