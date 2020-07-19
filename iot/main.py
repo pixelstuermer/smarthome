@@ -88,4 +88,4 @@ while True:
             print("Measured temperature", temperature)
             client.publish(topic, str(temperature))
 
-    time.sleep(SLEEP)
+            time.sleep(SLEEP)
