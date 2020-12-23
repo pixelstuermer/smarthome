@@ -98,7 +98,7 @@ Tbd.
 
 ## Credits And Related
 
-- Official RabbitMQ Docker [documentation](https://hub.docker.com/_/rabbitmq    )
+- Official RabbitMQ Docker [documentation](https://hub.docker.com/_/rabbitmq)
 - Official PostgreSQL Docker [documentation](https://hub.docker.com/_/postgres)
 
 ## License
