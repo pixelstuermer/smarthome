@@ -1,0 +1,21 @@
+name: smarthome-services
+on: [push, pull_request]
+jobs:
+  postgresql:
+    name: smarthome-postgresql-service
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd services/postgresql
+          sh build.sh
+          sh run.sh
+  rabbitmq:
+    name: smarthome-rabbitmq-service
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd services/rabbitmq
+          sh build.sh
+          sh run.sh
