@@ -9,13 +9,13 @@
       "tags": "management,administrator"
     },
     {
-      "name": "publisher",
+      "name": "device",
       "password_hash": "0V3EE1qDyYQpnqB8RCGI3Vj/UOVtwkPnkfOt0s4fAI++tYFn",
       "hashing_algorithm": "rabbit_password_hashing_sha256",
       "tags": ""
     },
     {
-      "name": "subscriber",
+      "name": "backend",
       "password_hash": "1BgELFOsIw6od4KhJ7bSZ16EwSKW58+9SpmL9owHUWDfO6vV",
       "hashing_algorithm": "rabbit_password_hashing_sha256",
       "tags": ""
@@ -35,14 +35,14 @@
       "read": ".*"
     },
     {
-      "user": "publisher",
+      "user": "device",
       "vhost": "/",
       "configure": ".*",
       "write": ".*",
       "read": ".*"
     },
     {
-      "user": "subscriber",
+      "user": "backend",
       "vhost": "/",
       "configure": ".*",
       "write": ".*",
