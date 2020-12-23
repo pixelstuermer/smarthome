@@ -100,6 +100,8 @@ Tbd.
 
 - Official RabbitMQ Docker [documentation](https://hub.docker.com/_/rabbitmq)
 - Official PostgreSQL Docker [documentation](https://hub.docker.com/_/postgres)
+- Google [Codestyle](https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml)
+- Google [Checkstyle](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml)
 
 ## License
 

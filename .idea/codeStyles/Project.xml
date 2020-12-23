@@ -1,0 +1,54 @@
+<component name="ProjectCodeStyleConfiguration">
+    <code_scheme name="Project" version="173">
+        <option name="RIGHT_MARGIN" value="180"/>
+        <option name="FORMATTER_TAGS_ENABLED" value="true"/>
+        <DBN-PSQL>
+            <case-options enabled="true">
+                <option name="KEYWORD_CASE" value="upper"/>
+                <option name="FUNCTION_CASE" value="upper"/>
+                <option name="PARAMETER_CASE" value="lower"/>
+                <option name="DATATYPE_CASE" value="upper"/>
+                <option name="OBJECT_CASE" value="preserve"/>
+            </case-options>
+            <formatting-settings enabled="true"/>
+        </DBN-PSQL>
+        <DBN-SQL>
+            <case-options enabled="true">
+                <option name="KEYWORD_CASE" value="upper"/>
+                <option name="FUNCTION_CASE" value="upper"/>
+                <option name="PARAMETER_CASE" value="lower"/>
+                <option name="DATATYPE_CASE" value="upper"/>
+                <option name="OBJECT_CASE" value="preserve"/>
+            </case-options>
+            <formatting-settings enabled="false">
+                <option name="STATEMENT_SPACING" value="ignore_spacing"/>
+                <option name="CLAUSE_CHOP_DOWN" value="ignore_wrapping"/>
+                <option name="ITERATION_ELEMENTS_WRAPPING" value="ignore_wrapping"/>
+            </formatting-settings>
+        </DBN-SQL>
+        <DBN-PSQL>
+            <case-options enabled="true">
+                <option name="KEYWORD_CASE" value="upper"/>
+                <option name="FUNCTION_CASE" value="upper"/>
+                <option name="PARAMETER_CASE" value="lower"/>
+                <option name="DATATYPE_CASE" value="upper"/>
+                <option name="OBJECT_CASE" value="preserve"/>
+            </case-options>
+            <formatting-settings enabled="true"/>
+        </DBN-PSQL>
+        <DBN-SQL>
+            <case-options enabled="true">
+                <option name="KEYWORD_CASE" value="upper"/>
+                <option name="FUNCTION_CASE" value="upper"/>
+                <option name="PARAMETER_CASE" value="lower"/>
+                <option name="DATATYPE_CASE" value="upper"/>
+                <option name="OBJECT_CASE" value="preserve"/>
+            </case-options>
+            <formatting-settings enabled="false">
+                <option name="STATEMENT_SPACING" value="ignore_spacing"/>
+                <option name="CLAUSE_CHOP_DOWN" value="ignore_wrapping"/>
+                <option name="ITERATION_ELEMENTS_WRAPPING" value="ignore_wrapping"/>
+            </formatting-settings>
+        </DBN-SQL>
+    </code_scheme>
+</component>

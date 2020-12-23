@@ -1,9 +1,10 @@
+import ds18x20
+import json
 import machine
 import network
-import time
-import json
 import onewire
-import ds18x20
+import time
+
 from umqttsimple import MQTTClient
 
 PIN = 4
